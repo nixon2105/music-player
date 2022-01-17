@@ -7,6 +7,8 @@ const progress = document.querySelector('.progress');
 const progressContainer = document.querySelector('.progress-container');
 const title = document.querySelector('#title');
 const cover = document.querySelector('#acover');
+const currTime = document.querySelector('#currTime');
+const durTime = document.querySelector('#durTime');
 
 //Song titles
 const songs = ['Eminem - Revival', 'Eminem - third', 'Eminem - first'];
@@ -93,8 +95,11 @@ playBtn.addEventListener('click', () => {
 //Change song
 
 prevBtn.addEventListener('click', prevSong);
+
 nextBtn.addEventListener('click', nextSong);
 
 audio.addEventListener('timeupdate', updateProgress);
 
 progressContainer.addEventListener('click', setProgress);
+
+audio.addEventListener('ended', nextSong);
